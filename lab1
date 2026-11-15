@@ -1,0 +1,22 @@
+name: CI Day 1 Lab
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  hello_ci:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Inspect Runner
+        run: |
+          echo "Runner OS: $RUNNER_OS"
+          echo "Trigger Event: $GITHUB_EVENT_NAME"
+
+      - name: Confirm Execution
+        run: echo "CI Day 1 workflow executed successfully"
