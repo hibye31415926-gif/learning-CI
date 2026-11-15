@@ -18,7 +18,6 @@ jobs:
           echo "Runner OS: $RUNNER_OS"
           echo "Trigger Event: $GITHUB_EVENT_NAME"
 
-      - name: Simulate Failure
-      run: |
-        echo "Simulating a CI failure"
-        exit 1
+      - name: Confirm Execution
+        run: |
+            echo "CI Day 1 workflow executed successfully"
