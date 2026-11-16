@@ -3,6 +3,8 @@ name: CI Day 1 Lab
 on:
   push:
     branches: [main]
+  pull_request:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -17,6 +19,9 @@ jobs:
         run: |
           echo "Runner OS: $RUNNER_OS"
           echo "Trigger Event: $GITHUB_EVENT_NAME"
+          echo "Event: $GITHUB_EVENT_NAME"
+          echo "GitHub Ref: $GITHUB_REF"
+          echo "Run SHA: $GITHUB_SHA"
 
       - name: Confirm Execution
         run: |
