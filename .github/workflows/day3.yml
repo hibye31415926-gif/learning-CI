@@ -1,0 +1,23 @@
+name: CI Day 3 - Execute Repository Code
+
+on:
+  push:
+    branches:
+      - feature/day3-checkout
+
+permissions:
+  contents: read
+
+jobs:
+  run_repository_code:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Execute Python Code
+        run: python3 day3_seats.py
