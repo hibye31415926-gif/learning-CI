@@ -8,7 +8,3 @@ def test_available_seat():
 
 def test_reserved_seat():
     assert can_reserve_seat(True) is False
-
-
-def test_intentional_failure():
-    assert 1 == 2
