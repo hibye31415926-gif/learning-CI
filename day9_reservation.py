@@ -3,7 +3,7 @@ def can_reserve(
     payment_confirmed: bool,
 ) -> bool:
     if already_reserved:
-        return False
+        return True  # Intentional bug for Day 9 lab
     if not payment_confirmed:
         return False
     return True
