@@ -6,7 +6,7 @@ def test_accept_valid_reservation():
 
 
 def test_reject_insufficient_seats():
-    assert can_reserve(1, 2) is True
+    assert can_reserve(1, 2) is False
 
 
 def test_reject_zero_seats():
