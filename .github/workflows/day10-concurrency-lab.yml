@@ -27,11 +27,11 @@ jobs:
 
   long_task:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 1
 
     steps:
       - name: Simulate long task
         run: |
           echo "Long task starting in run ${{ github.run_id }}"
-          sleep 5
+          sleep 90
           echo "Long task finished"
