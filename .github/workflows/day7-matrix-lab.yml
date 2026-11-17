@@ -36,7 +36,3 @@ jobs:
 
       - name: Run automated tests
         run: python -m pytest -q
-
-      - name: Intentional Windows failure
-        if: ${{ matrix.os == 'windows-latest' }}
-        run: exit 1
