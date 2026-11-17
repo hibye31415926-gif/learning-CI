@@ -1,0 +1,37 @@
+name: Day 10 - Conditions, Timeouts & Concurrency
+
+on:
+  push:
+    branches:
+      - day10-concurrency-lab
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  gates:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Common step
+        run: echo "Common step runs on every event"
+
+      - name: Push-only step
+        if: ${{ github.event_name == 'push' }}
+        run: echo "Push-only step executed"
+
+  long_task:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Simulate long task
+        run: |
+          echo "Long task starting in run ${{ github.run_id }}"
+          sleep 5
+          echo "Long task finished"
