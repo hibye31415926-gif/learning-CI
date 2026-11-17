@@ -6,7 +6,7 @@ def test_available_and_paid():
 
 
 def test_already_reserved():
-    assert can_reserve(True, True) is True
+    assert can_reserve(True, True) is False
 
 
 def test_payment_not_confirmed():
